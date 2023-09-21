@@ -1,8 +1,8 @@
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {noise2D} from '@remotion/noise';
 
 export const Hackers: React.FC = () => {
-	const {fps, width} = useVideoConfig();
+	const {fps} = useVideoConfig();
 	const frame = useCurrentFrame();
 
 	const posterizedFrame = Math.floor(frame / 5) * 5;
@@ -19,7 +19,6 @@ export const Hackers: React.FC = () => {
 	const textEffect2 = spr(45, true);
 
 	const n = noise2D('hi', 0, posterizedFrame / 100);
-	const n2 = noise2D('there', 0, posterizedFrame / 100);
 
 	return (
 		<svg
@@ -3536,7 +3535,6 @@ export const Hackers: React.FC = () => {
 				<text
 					id="500"
 					fill="white"
-					xml:space="preserve"
 					font-family="Mona Sans"
 					font-size="285.39"
 					font-weight="900"
@@ -3555,7 +3553,6 @@ export const Hackers: React.FC = () => {
 				<text
 					id="Hackers"
 					fill="#00FF1A"
-					xml:space="preserve"
 					font-family="Mona Sans"
 					font-size="118.39"
 					font-weight="900"

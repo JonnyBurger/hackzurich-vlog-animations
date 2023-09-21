@@ -6,7 +6,7 @@ import {evolvePath} from '@remotion/paths';
 
 export const Autogenerate: React.FC = () => {
 	const frame = useCurrentFrame();
-	const {fps, height} = useVideoConfig();
+	const {fps} = useVideoConfig();
 	const posterizedFrame = Math.floor(frame / 3) * 3;
 
 	const spr = (delay: number, clamp?: boolean) =>

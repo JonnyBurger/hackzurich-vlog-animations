@@ -3,6 +3,7 @@ import {Ai} from './Ai';
 import {Autogenerate} from './Autogenerate';
 import {Cheapest} from './Cheapest';
 import {MyComp} from './Composition';
+import {Dialogue, dialogueSchema} from './Dialogue';
 import {Expensive} from './Expensive';
 import {Goal} from './Goal';
 import {Hackers} from './Hackers';
@@ -10,6 +11,7 @@ import {JumpOut, jumpOutSchema} from './JumpOut';
 import {OurTeam} from './OurTeam';
 import {Rewind} from './Rewind';
 import {SameBenefits} from './SameBenefits';
+import {TimeTag, timeTagSchema} from './TimeTag';
 import {WtfIsA} from './WtfIsA';
 
 export const RemotionRoot: React.FC = () => {
@@ -112,6 +114,26 @@ export const RemotionRoot: React.FC = () => {
 				height={1080}
 				schema={jumpOutSchema}
 				defaultProps={{text: 'We'}}
+			/>
+			<Composition
+				id="TimeTag"
+				component={TimeTag}
+				durationInFrames={200}
+				fps={30}
+				width={600}
+				height={400}
+				schema={timeTagSchema}
+				defaultProps={{text: 'We'}}
+			/>
+			<Composition
+				id="Dialogue"
+				component={Dialogue}
+				durationInFrames={200}
+				fps={30}
+				width={600}
+				height={400}
+				schema={dialogueSchema}
+				defaultProps={{text: 'Yeah yeah,', text2: 'for sure', shaky: true}}
 			/>
 		</>
 	);
